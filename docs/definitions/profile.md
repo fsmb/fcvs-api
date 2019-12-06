@@ -87,7 +87,7 @@ Application information.
 | - | - | - |
 | boardName | string | Required. Board name. |
 | sentDateUtc | string(date/time) | Date/Time the profile was sent, in UTC. |
-| status | string | Required. Status of the profile (e.g. In progress, Submitted, Complete. |
+| status | string | Required. Status of the profile (e.g. Submitted, Complete. |
 
 ## Degree
 

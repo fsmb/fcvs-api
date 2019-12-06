@@ -7,10 +7,10 @@ To learn more about FSMB APIs, refer to the [Getting Started](https://github.com
 
 
 - URL
-  - Demo: https://demo-services.fsmb.org/fcvs/
-  - Production: https://services.fsmb.org/fcvs/
+  - Demo: https://services-fcvs-demo.fsmb.org
+  - Production: https://services-fcvs.fsmb.org
 - [Postman Collection](https://www.getpostman.com/collections/b59f8de00ca54eb654b7)
-- [OpenAPI Specification](https://demo-services.fsmb.org/fcvs/swagger/v1)
+- [OpenAPI Specification](https://services-fcvs.fsmb.org/swagger/v1)
 
 ## Change Log
 

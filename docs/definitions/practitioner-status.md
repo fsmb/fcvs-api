@@ -5,7 +5,7 @@ Status of an FCVS Profile.
 | Name | Type | Description |
 | - | - | - |
 | fid |  string (length: 9, format: digits) | Required. FID of practitioner. |
-| name | [Name](#name) | Reguired. Name of practitioner. | 
+| name | [Name](#name) | Required. Name of practitioner. | 
 | lastProfileId | long | The ID of the last profile. |
 | lastProfileStatus | string | The status of the last profile. | 
 | lastProfileSubmitDateUtc | string (date/time) | The date/time the last profile was submitted, in UTC. | 

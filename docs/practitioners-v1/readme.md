@@ -3,7 +3,7 @@
 ##### URL: /v1/boards/{board}/practitioners
 ##### API Version: 1.0
 
-The practitioners resource provides access to the FCVS Profiles for a specific practitioner.
+The practitioners resource provides access to FCVS Profiles for a specific practitioner.
 
 ## URI Parameters
 
