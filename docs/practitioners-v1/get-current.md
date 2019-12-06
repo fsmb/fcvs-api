@@ -1,6 +1,6 @@
 # Get Current
 
-Gets the current FCVS Profile for a practitioner.
+Get the current FCVS Profile for a practitioner.
 
 ```http
 GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
@@ -18,8 +18,8 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
 
 | Name | Type | Description |
 | - |-|-|
-| 200 OK | [Profile](/docs/definitions/profile.md) | Success |
-| 404 Not Found | | Board code is invalid or Practitioner has no profile |
+| 200 OK | [Profile](/docs/definitions/profile.md) | Success. |
+| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile. |
 
 ## Security
 
@@ -27,14 +27,14 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
 
 | Scope | Description |
 | -|-|
-|fcvs.read | Grants the ability to read FCVS Profile information. |
+|fcvs.read | Grants the ability to read FCVS information. |
 
 ## Examples
 
-[Get the last profile](#get-the-last-profile)
+[Get current profile](#get-current-profile)
 ***
 
-### Get the last profile
+### Get current profile
 
 #### Sample Request
 
@@ -45,8 +45,6 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
 #### Sample Response
 
 Status code: 200
-
-*Note: Output is elided.*
 
 ```json
 {

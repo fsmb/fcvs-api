@@ -1,6 +1,6 @@
-# Get Current
+# Get Status
 
-Get the status of the current FCVS Profile for a practitioner
+Get the status of the current FCVS Profile for a practitioner.
 
 ```http
 GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
@@ -18,8 +18,8 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 
 | Name | Type | Description |
 | - |-|-|
-| 200 OK | [Practitioner Status](/docs/definitions/practitioner-status.md) | Success |
-| 404 Not Found | | Board code is invalid or Practitioner has no profile |
+| 200 OK | [Practitioner Status](/docs/definitions/practitioner-status.md) | Success. |
+| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile. |
 
 ## Security
 
@@ -31,10 +31,10 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 
 ## Examples
 
-[Get the status](#get-the-status)
+[Get status](#get-status)
 ***
 
-### Get the status
+### Get status
 
 #### Sample Request
 
@@ -45,8 +45,6 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 #### Sample Response
 
 Status code: 200
-
-*Note: Output is elided.*
 
 ```json
 {

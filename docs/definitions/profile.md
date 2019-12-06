@@ -4,7 +4,7 @@ An FCVS Profile for a Practitioner.
 
 | Name | Type | Description |
 | - | - | - |
-| id | integer | Required. Application ID |
+| id | integer | Required. Application ID. |
 | fid | string (length: 9, format: digits) | Required. FID of practitioner. |
 | submitDateUTC | string (date/time) | Date/time of submission, in UTC. |
 | application | [Application](#application) | Required. Application information. |
@@ -13,7 +13,7 @@ An FCVS Profile for a Practitioner.
 | addresses | [Addresses](#addresses) | Required. Mailing addresses. |
 | emailAddresses | [EmailAddresses](#emailaddresses) | Required. Email addresses. |
 | phones | [Phones](#phones) | Required. Phone numbers. |
-| medicalEducation | [MedicalEducationTraining](#medicaleducationtraining) | Medical education. |
+| medicalEducation | [MedicalEducationTraining](#medicaleducationtraining) | Required. Medical education. |
 | postGraduateTraining | [PostGraduateTraining](#postgraduatetraining) | Postgraduate training. |                
 | exams | [Exam](#exam)[] | Exams. |
 | licenses | [License](#license)[] | Licenses. |
@@ -34,7 +34,7 @@ Accredited training information.
 | trainingStatus | string | Required. Training status (e.g. `Active`, `Completed`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | Required. End date. |
-| unusualCircumstances | [UnusualCircumstances](#unusualcircumstances) | Unusual Circumstances. |
+| unusualCircumstances | [UnusualCircumstances](#unusualcircumstances) | Unusual circumstances. |
         
 ## Activity
 
@@ -47,9 +47,9 @@ Activity information.
 | beginDate | string (date) | Required. Start date. |
 | endDate | string (date) | End date. |
 | description | string | Required. Description. |
-| addressLines | string[] | Address lines. |
-| city | string | City. |
-| stateOrProvince | [Region](#region) | State/province. |
+| addressLines | string[] | Required. Address lines. |
+| city | string | Required. City. |
+| stateOrProvince | [Region](#region) | Required. State/province. |
 | postalCode | string | Postal code. |
 | position | string | Position. |
 | department | string | Department. |
@@ -87,6 +87,7 @@ Application information.
 | - | - | - |
 | boardName | string | Required. Board name. |
 | sentDateUtc | string(date/time) | Date/Time the profile was sent, in UTC. |
+| status | string | Required. Status of the profile (e.g. In progress, Submitted, Complete. |
 
 ## Degree
 
@@ -130,11 +131,10 @@ Exam.
 | Name | Type | Description |
 | - | - | - |
 | examType | string | Required. Type of exam. |
-| stateBoardDetail | [StateProvince](#stateprovince) | State board description. |
+| stateBoardDetail | [StateBoard](#stateBoard) | State board code and description (for state exams). |
 | examDate | string (date) | Required. Exam date. |
 | numberOfAttempts | integer | Reqiured. Number of attempts. |
 | passFail | string | Required. Pass/fail status (e.g. `Pass`, `Fail`, `Unknown`). Refer to [codes](https://github.com/fsmb/api-docs/tree/master/docs/codes) for more information. |
-| stateBoard | | **Deprecated**. Use `stateBoardDetail`. |
 
 ## FifthPathway
 
@@ -207,7 +207,7 @@ Medical school education.
 | endDate | string (date) | Required. End date. |
 | degree | [Degree](#degree) | Degree information. |
 | graduationDate | string (date) | Graduation date. |
-| unusualCircumstances | [UnusualCircumstances](#unusualCircumstances) | Unusual Circumstances.
+| unusualCircumstances | [UnusualCircumstances](#unusualCircumstances) | Unusual circumstances.
 
 ## MedicalEducationTraining
 
@@ -341,6 +341,15 @@ Training specialty.
 | - | - | - |
 | description | string | Required. Description. |
 
+## StateBoard
+
+State Board information.
+
+| Name | Type | Description |
+| - | - | - |
+| code | string | Required. State Board Code (e.g. `TX`, `MD`). |
+| description | string | Required. Description. |
+
 ## StateProvince
 
 State/province information.
@@ -353,6 +362,7 @@ State/province information.
 ## UnusualCircumstances
 
 Unusual circumstances.
+
 | Name | Type | Description |
 | - | - | - |
 | hasInterruptions | boolean | Required. Has an interruption? |

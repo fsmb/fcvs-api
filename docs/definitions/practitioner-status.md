@@ -1,6 +1,6 @@
 # Practitioner Status
 
-Status of an FCVS Profile
+Status of an FCVS Profile.
 
 | Name | Type | Description |
 | - | - | - |
