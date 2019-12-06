@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FcvsApiSample": {
+      "commandName": "Project",
+      "commandLineArgs": "-clientId fsmb.testapi -clientSecret FSMB2016!"
+    }
+  }
+}
