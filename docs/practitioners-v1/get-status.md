@@ -31,10 +31,10 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 
 ## Examples
 
-[Get status](#get-status)
+[Get profile status](#get-profile-status)
 ***
 
-### Get status
+### Get profile status
 
 #### Sample Request
 
@@ -56,7 +56,7 @@ Status code: 200
         "suffix": ""
     },
     "lastProfileId": 428909,
-    "lastProfileStatus": "In Progress",
+    "lastProfileStatus": "Submitted",
     "lastProfileSubmitDateUtc": "2019-09-23T13:24:23.343Z"
 }
 ```
