@@ -1,12 +1,28 @@
-﻿using Fsmb.Apis.FCVS.Clients.Http;
-using Fsmb.Apis.FCVS.Utility;
+﻿/*
+ * Copyright © 2019 Federation of State Medical Boards
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+ * documentation files (the “Software”), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+ * persons to whom the Software is furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Fsmb.Apis.FCVS.Clients.Http;
+using Fsmb.Apis.FCVS.Utility;
+using Newtonsoft.Json;
 
 namespace Fsmb.Apis.FCVS
 {
@@ -126,14 +142,14 @@ namespace Fsmb.Apis.FCVS
 
         private Func<FcvsClient, Task> DisplayMenu()
         {
-            Terminal.WriteLine("\nFCVS API Options");
+            Terminal.WriteLine("\nFCVS API Options. Select one of the following:");
             Terminal.WriteLine("".PadLeft(20, '-'));
 
-            Terminal.WriteLine("1) Get the status of the current FCVS Profile for a practitioner.");
-            Terminal.WriteLine("2) Get the current FCVS Profile for a practitioner.");
+            Terminal.WriteLine("1) Get status of the current FCVS Profile for a practitioner.");
+            Terminal.WriteLine("2) Get current FCVS Profile for a practitioner.");
             Terminal.WriteLine("0) Quit");
 
-            Terminal.WriteLine("Please select a number option from above.");
+            Terminal.WriteLine();
             do
             {
                 switch (Console.ReadKey(true).KeyChar)
@@ -198,31 +214,40 @@ namespace Fsmb.Apis.FCVS
         {
             //Call API
             Terminal.WriteDebug($"Getting Current Profile for FID {fid}");
-            var profile = await client.GetCurrentProfileAsync("me", fid, cancellationToken).ConfigureAwait(false);
-            if (profile == null)
-                Terminal.WriteWarning("No profile found");
-            else
+            try
             {
-                Terminal.WriteLine();
-            };
+                var profile = await client.GetCurrentProfileAsync("me", fid, cancellationToken).ConfigureAwait(false);
+                if (profile != null)
+                    Terminal.WriteLine(JsonConvert.SerializeObject(profile, Formatting.Indented));
+            }
+            catch (Exception e)
+            {
+                e = e.Unwrap();
+                Terminal.WriteError(e.Message);
+            }
+
         }
 
         private async Task GetStatusAsync(FcvsClient client, string fid, CancellationToken cancellationToken = default(CancellationToken))
         {
             //Call API
             Terminal.WriteDebug($"Getting Status of Current Profile for FID {fid}");
-            var profile = await client.GetStatusAsync("me", fid, cancellationToken).ConfigureAwait(false);
-            if (profile == null)
-                Terminal.WriteWarning("No profile status found");
-            else
+            try
             {
-                Terminal.WriteLine();
-            };
+                var status = await client.GetStatusAsync("me", fid, cancellationToken).ConfigureAwait(false);
+                if (status != null)
+                    Terminal.WriteLine(JsonConvert.SerializeObject(status, Formatting.Indented));
+            }
+            catch (Exception e)
+            {
+                e = e.Unwrap();
+                Terminal.WriteError(e.Message);
+            }
+
         }
 
         private FcvsClient CreateClient()
         {
-            Terminal.WriteLine();
             //Authenticate the client
             var credentials = GetAccessTokenAsync(_options.AuthenticationUrl, _options.ClientId, _options.ClientSecret).Result;
 
@@ -242,7 +267,9 @@ namespace Fsmb.Apis.FCVS
             var client = new AuthenticationClient(httpClient);
 
             Terminal.WriteDebug("Authenticating user");
+
             var accessToken = await client.AuthenticateAsync(clientId, clientSecret, "fcvs.read").ConfigureAwait(false);
+            Terminal.WriteLine();
 
             return accessToken;
         }
