@@ -13,8 +13,8 @@ Practitioner profile for a board
 | addresses | [Addresses](mailing-addresses.md) | Yes | Mailing addresses |
 | emailAddresses | [EmailAddresses](email-addresses.md) | Yes | Email addresses |
 | phones | [Phones](phones.md) | Yes | Phone numbers |
-| medicalEducation | [MedicalEducationTraining](medicaleducationtraining.md) | Yes | Medical education |
-| postGraduateTraining | [PostGraduateTraining](postgraduatetraining.md) | No | Postgraduate training |
+| medicalEducation | [MedicalEducationTraining](medical-education-training.md) | Yes | Medical education |
+| postGraduateTraining | [PostGraduateTraining](post-graduate-training.md) | No | Postgraduate training |
 | exams | [Exam](exam.md)[] | No | Exams |
 | licenses | [License](license.md)[] | No | Licenses |
 | activities | [Activity](activity.md)[] | No | Chronology of activity |
