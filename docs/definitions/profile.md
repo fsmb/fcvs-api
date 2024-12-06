@@ -11,7 +11,7 @@ Practitioner profile for a board
 | identity | [Identification](identification.md) | Yes | Identity |
 | names | [Names](names.md) | Yes | Names |
 | addresses | [Addresses](mailing-addresses.md) | Yes | Mailing addresses |
-| emailAddresses | [EmailAddresses](emailaddresses.md) | Yes | Email addresses |
+| emailAddresses | [EmailAddresses](email-addresses.md) | Yes | Email addresses |
 | phones | [Phones](phones.md) | Yes | Phone numbers |
 | medicalEducation | [MedicalEducationTraining](medicaleducationtraining.md) | Yes | Medical education |
 | postGraduateTraining | [PostGraduateTraining](postgraduatetraining.md) | No | Postgraduate training |
