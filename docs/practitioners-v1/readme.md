@@ -10,7 +10,7 @@ The practitioners resource provides access to FCVS Profiles for a specific pract
 
 | Name | In | Required | Type | Description |
 | - |-|-|-|-|
-| board | path | True | string | The board code or `me`. |
+| board | path | True | string | Board code or `me` |
 
 ## Operations
 
