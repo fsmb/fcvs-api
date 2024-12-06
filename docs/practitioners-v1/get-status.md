@@ -60,5 +60,3 @@ Status code: 200
     "lastProfileSubmitDateUtc": "2019-09-23T13:24:23.343Z"
 }
 ```
-
-For more examples go to [samples](/samples/).

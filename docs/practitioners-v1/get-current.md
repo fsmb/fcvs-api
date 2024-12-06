@@ -262,5 +262,3 @@ Status code: 200
     ]
 }
 ```
-
-For more examples go to [samples](/samples/).
