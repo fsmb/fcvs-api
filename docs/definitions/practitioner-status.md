@@ -1,22 +1,12 @@
 # Practitioner Status
 
-Status of an FCVS Profile.
+Status of a practitioner
 
-| Name | Type | Description |
-| - | - | - |
-| fid |  string (length: 9, format: digits) | Required. FID of practitioner. |
-| name | [Name](#name) | Required. Name of practitioner. | 
-| lastProfileId | long | The ID of the last profile. |
-| lastProfileStatus | string | The status of the last profile. | 
-| lastProfileSubmitDateUtc | string (date/time) | The date/time the last profile was submitted, in UTC. | 
-| lastProfileSentDateUtc | string (date/time) | The date/time the last profile was sent, in UTC. |
-
-## Name 
-Name of a person. 
-
-| Name | Type | Description |
-| - | - | - |
-| firstName | string | Required. First name. |
-| middleName | string | Middle name. |
-| lastName | string | Required. Last name. |
-| suffix | string | Suffix. |
+| Name | Type | Required | Description |
+| - | - | - | - |
+| fid |  string (len: 9, format: digits) | Yes | FID of practitioner |
+| name | [Name](name.md) | Yes | Name of practitioner |
+| lastProfileId | long | Yes | ID of the last profile |
+| lastProfileStatus | string | No | Status of the last profile |
+| lastProfileSubmitDateUtc | string (date/time) | Yes | Date/time the last profile was submitted, in UTC |
+| lastProfileSentDateUtc | string (date/time) | No | Date/time the last profile was sent, in UTC, if any |

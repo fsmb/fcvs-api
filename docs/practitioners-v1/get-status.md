@@ -10,16 +10,16 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 
 | Name | In | Required | Type | Description |
 | - |-|-|-|-|
-| baseUrl | path | True | string | The API URL. |
-| board | path | True | string | The board code or `me`. |
-| fid | path | True | string | The FID of the practitioner. |
+| baseUrl | path | True | string | API URL |
+| board | path | True | string | Board code or `me` |
+| fid | path | True | string | FID of the practitioner |
 
 ## Responses
 
 | Name | Type | Description |
 | - |-|-|
-| 200 OK | [Practitioner Status](/docs/definitions/practitioner-status.md) | Success. |
-| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile. |
+| 200 OK | [Practitioner Status](/docs/definitions/practitioner-status.md) | Success |
+| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile |
 
 ## Security
 
@@ -27,7 +27,7 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 
 | Scope | Description |
 | -|-|
-|fcvs.read | Grants the ability to read FCVS information. |
+| fcvs.read | Grants the ability to read FCVS information. |
 
 ## Examples
 
@@ -60,5 +60,3 @@ Status code: 200
     "lastProfileSubmitDateUtc": "2019-09-23T13:24:23.343Z"
 }
 ```
-
-For more examples go to [samples](/samples/).

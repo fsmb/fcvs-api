@@ -10,16 +10,16 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
 
 | Name | In | Required | Type | Description |
 | - |-|-|-|-|
-| baseUrl | path | True | string | The API URL. |
-| board | path | True | string | The board code or `me`. |
-| fid | path | True | string | The FID of the practitioner. |
+| baseUrl | path | True | string | API URL |
+| board | path | True | string | Board code or `me` |
+| fid | path | True | string | FID of the practitioner |
 
 ## Responses
 
 | Name | Type | Description |
 | - |-|-|
-| 200 OK | [Profile](/docs/definitions/profile.md) | Success. |
-| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile. |
+| 200 OK | [Profile](/docs/definitions/profile.md) | Success |
+| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile |
 
 ## Security
 
@@ -262,5 +262,3 @@ Status code: 200
     ]
 }
 ```
-
-For more examples go to [samples](/samples/).
