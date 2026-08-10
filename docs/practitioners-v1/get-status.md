@@ -19,7 +19,8 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/status
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Practitioner Status](/docs/definitions/practitioner-status.md) | Success |
-| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile |
+| 403 Forbidden | | Board code is invalid |
+| 404 Not Found | | Profile not found |
 
 ## Security
 
