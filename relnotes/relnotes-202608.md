@@ -10,7 +10,7 @@
 
 - The format for reporting errors has changed to align with standard API practices. Refer to [Error Reporting](#error-reporting) for more information.
 - Some endpoint responses have changed the status code returned to better reflect the error. Refer to [Response Changes](#response-changes) for more information.
-- 
+  
 ## Singular Names
 
 Support for singular names has been added to the API for physician names. Physicians who have only a last name are considered to have a singular name. 
