@@ -1,6 +1,6 @@
-# Get Current
+# Get Current Profile
 
-Get the current FCVS Profile for a practitioner.
+Gets the current FCVS Profile for a practitioner.
 
 ```http
 GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
@@ -19,7 +19,8 @@ GET {baseUrl}/v1/boards/{board}/practitioners/{fid}/profiles/current
 | Name | Type | Description |
 | - |-|-|
 | 200 OK | [Profile](/docs/definitions/profile.md) | Success |
-| 404 Not Found | | Board code is missing/invalid or Practitioner does not have an FCVS Profile |
+| 403 Forbidden | | Board code is invalid |
+| 404 Not Found | | Profile not found |
 
 ## Security
 
